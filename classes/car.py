@@ -26,4 +26,12 @@ print(myCar.description())
 print(myCar.miles())
 myCar.change_odometer(3530)
 
+#creating an electric car child class
+class Electric(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
         
+my_byd = Electric("Byd", "chonging", 2025)
+
+print(my_byd.description())
+my_byd.change_odometer(2)
