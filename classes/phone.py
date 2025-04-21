@@ -14,17 +14,21 @@ class Phone:
     
     
 class Redmi(Phone):
-    def __init__(self, name, model, price, ScreenSize, year,color):
+    def __init__(self, name, model, price, ScreenSize, year,color = "black"):
         super().__init__(name, model, price, ScreenSize, year)
         self.color = color
         
     def description(self):
        
-        info = f"This is a {self.name} phone, {self.price} ksh,{self.color} {self.ScreenSize}, {self.year} year of manufacture"
+        info = f"This is a {self.name} phone, {self.price} ksh,{self.color},{self.ScreenSize},{self.year} year of manufacture"
         return info
     
-    
-myPhone = Redmi("redmi","x21",34000, "black","16inches",2025)
+    def priceRange(self):
+        if self.color == "black":
+            print("Must be a great phone")
+        
+myPhone = Redmi("redmi","x21",34000,"16inches",2025)
 
 myPhone.avialable()
 print(myPhone.description())
+myPhone.priceRange()
